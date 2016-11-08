@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <tabs>
+      <Tab text="Data">
+         <content>
+            <HBox prefHeight="567.0" prefWidth="800.0" spacing="10.0" style="-fx-background-color: #A6A8A5;">
+               <children>
+                  <VBox prefHeight="547.0" prefWidth="340.0" spacing="5.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="340.0" spacing="2.0" style="-fx-background-color: FFE1A1;">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wavelength (nm)">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="378.0" spacing="10.0" style="-fx-background-color: FFE1A1;">
+                                 <children>
+                                    <TextField id="wavelength" fx:id="wavelengthTextArea" prefWidth="100.0" promptText="400-700" />
+                                    <Button mnemonicParsing="false" onAction="#OnWavelengthButtonClicked" prefWidth="80.0" text="Enter" />
+                                 </children>
+                              </HBox>
+                              <Slider id="wavelength" fx:id="wavelengthSlider" majorTickUnit="50.0" max="700.0" min="400.0" minorTickCount="10" showTickLabels="true" showTickMarks="true">
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </Slider>
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </VBox>
+                        <HBox prefHeight="150.0" prefWidth="340.0" spacing="10.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="150.0" spacing="12.0" style="-fx-background-color: FFE1A1;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slit Amount">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <RadioButton fx:id="singleBtn" mnemonicParsing="false" onAction="#onSingleBtn" selected="true" text="Single ">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="slitAmount" />
+                                       </toggleGroup>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="doubleBtn" mnemonicParsing="false" onAction="#onDoubleBtn" text="Double" toggleGroup="$slitAmount">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="3.0" />
+                                       </padding>
+                                    </RadioButton>
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="180.0" style="-fx-background-color: FFE1A1;">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Separation (mm)">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="separationTextArea" disable="true" prefWidth="90.0" promptText="0-10" />
+                                          <Button fx:id="separationBtn" disable="true" mnemonicParsing="false" onAction="#OnSeparationButtonClicked" prefWidth="70.0" text="Enter" />
+                                       </children>
+                                    </HBox>
+                                    <Slider fx:id="separationSlider" disable="true" majorTickUnit="1.0" max="10.0" minorTickCount="0" showTickLabels="true" showTickMarks="true">
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                    </Slider>
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="340.0" spacing="2.0" style="-fx-background-color: #FFE1A1;">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slit Width (mm)">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="378.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="widthTextArea" prefWidth="100.0" promptText="0.5-3" />
+                                    <Button mnemonicParsing="false" onAction="#onWidthButtonClicked" prefWidth="80.0" text="Enter" />
+                                 </children>
+                              </HBox>
+                              <Slider fx:id="widthSlider" majorTickUnit="0.1" max="3.0" min="0.5" minorTickCount="0" showTickLabels="true" showTickMarks="true">
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </Slider>
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="340.0" spacing="2.0" style="-fx-background-color: FFE1A1;">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distance to Screen (mm)">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="378.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="distanceTextArea" prefWidth="100.0" promptText="500-1000" />
+                                    <Button mnemonicParsing="false" onAction="#onDistanceButtonClicked" prefWidth="80.0" text="Enter" />
+                                 </children>
+                              </HBox>
+                              <Slider fx:id="distanceSlider" majorTickUnit="50.0" max="1000.0" min="500.0" minorTickCount="25" showTickLabels="true" showTickMarks="true">
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </Slider>
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="335.0" style="-fx-background-color: FFE1A1;">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#OnExportButtonClicked" prefWidth="100.0" text="Export" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="567.0" prefWidth="440.0" spacing="5.0">
+                     <children>
+                        <HBox prefHeight="190.0" prefWidth="435.0" spacing="10.0">
+                           <children>
+                              <Pane prefHeight="150.0" prefWidth="212.0" style="-fx-background-color: FFE1A1;">
+                                 <children>
+                                    <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" scaleX="1.25" scaleY="1.25" />
+                                 </children></Pane>
+                              <Pane fx:id="apertureGraph" prefHeight="150.0" prefWidth="212.0" style="-fx-background-color: FFE1A1;">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding></Pane>
+                           </children>
+                        </HBox>
+                        <Pane fx:id="graph" prefHeight="220.0" prefWidth="435.0" style="-fx-background-color: FFE1A1;" />
+                        <Pane fx:id="intensityMap" prefHeight="65.0" prefWidth="435.0" style="-fx-background-color: #000000;" />
+                        <VBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="100.0" style="-fx-background-color: FFE1A1;">
+                           <children>
+                              <Text fx:id="diffractionDifferenceText" strokeType="OUTSIDE" strokeWidth="0.0" text="Diffraction Peak Distance:">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding></VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </content>
+      </Tab>
+      <Tab text="Theory">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FFE1A1;">
+               <children>
+                  <Label layoutX="361.0" layoutY="3.0" text="Theory">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="21.0" layoutY="40.0" prefHeight="502.0" prefWidth="754.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2458.0" prefWidth="706.0">
+                           <children>
+                              <ImageView fitHeight="2634.0" fitWidth="738.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@res/Theory.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children></AnchorPane>
+         </content></Tab>
+      <Tab text="Instruction">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: FFE1A1;">
+               <children>
+                  <Label layoutX="83.0" layoutY="41.0" text="Single and Double Slit Diffraction Instructions">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="138.0" text="On launching the program, you will be presented with a blank screen with controls so that you may define your own parameters&#10;before the program displays any images. To change the image, adjust the value of any of the parameters (wavelength,&#10;slit amount, slit separation, slit width, or distance to screen.) The screen will automatically update with the graph of&#10;the diffraction pattern, the intensity map, the aperture, and a visualization of the experiment.&#10;&#10;You may change the values of any of the parameters using the sliders (or radio buttons to control number of slits), or you&#10;may also use the text box to manually enter a value. The allowed range of values for that parameter is displayed in the text box.&#10;If you enter a number that is smaller than the allowed range, or if you enter a character that is not a number, the box will&#10;default to the smallest allowed number and set the slider to the appropriate value. If you enter a number that is larger&#10;than the allowed range, the box will default to the largest allowed number and set the slider to the appropriate value.&#10;Note that once you enter a value in the text box, you must click the 'Enter' button to produce a result.&#10;&#10;Note that for the when choosing a double slit experiment, the visualization will update immediately, but to see a visible&#10;change in the graph, intensity map, and aperture, you must change the amount of separation to a number greater than 0.&#10;&#10;You may also export or print the diffraction pattern, intensity map, and aperture. To do this, right click on your selected&#10;graph, and select either 'Save' or 'Print'. A dialog box will then appear, prompting you for a save location or with printing options.&#10;You may also export in the program using the 'Export' button, which will then prompt you for a save location." textAlignment="CENTER" wrapText="true" />
+               </children></AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="About">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: FFE1A1;">
+               <children>
+                  <Label layoutX="145.0" layoutY="50.0" text="Single and Double Slit Diffraction Experiment">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="208.0" layoutY="109.0" text="By: Nick Vilimek, Blake Braun, &amp; Hastomi Wijiaji&#10;&#10;CSCI 2300: Object Oriented Software Design&#10;&#10;Spring 2016&#10;&#10;Saint Louis University - Madrid Campus" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" scaleX="1.25" scaleY="1.25">
+                     <image>
+                        <Image url="@res/SLU.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
