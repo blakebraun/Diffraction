@@ -165,7 +165,7 @@
                         <Pane fx:id="intensityMap" prefHeight="65.0" prefWidth="435.0" style="-fx-background-color: #000000;" />
                         <VBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="100.0" style="-fx-background-color: FFE1A1;">
                            <children>
-                              <Text fx:id="diffractionDifferenceText" strokeType="OUTSIDE" strokeWidth="0.0" text="Diffraction Peak Distance:">
+                              <Text fx:id="diffractionDifferenceText" strokeType="OUTSIDE" strokeWidth="0.0" text="Position of First Minimum:" wrappingWidth="267.20166015625">
                                  <font>
                                     <Font size="17.0" />
                                  </font>

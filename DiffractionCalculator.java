@@ -134,10 +134,10 @@ public class DiffractionCalculator {
      */
 
     public double getFirstDiffractionDistance(){
-        if(numberSlits==1){
-            return ((2.5*distanceFromScreen*wavelength/slitWidth) - (1.5*distanceFromScreen*wavelength/slitWidth));
-        }else {
-            return distanceFromScreen * wavelength / distanceBetweenSlits;
+        if (numberSlits == 1) {
+            return (distanceFromScreen * wavelength) / slitWidth;
+        } else {
+            return (0.5 * distanceFromScreen * wavelength) / distanceBetweenSlits;
         }
     }
     /**

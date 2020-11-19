@@ -193,7 +193,7 @@ public class Controller implements Initializable{
         img.setImage(i);
         //Sets the distance between peaks to a label
         NumberFormat formatter = new DecimalFormat("#.000000");
-        diffractionDifferenceText.setText("Diffraction Peak Distance: "+ formatter.format(calculator.getFirstDiffractionDistance()));
+        diffractionDifferenceText.setText("Position of First Minimum: "+ formatter.format(calculator.getFirstDiffractionDistance()));
     }
 
     /**
